@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rishta Radar</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f0ff;color:#333}
+header{text-align:center;padding:25px;background:#6c4ab6;color:white}
+header h1{margin:0}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:15px}
+nav a{background:white;padding:10px;border-radius:20px;text-decoration:none;color:#6c4ab6;font-weight:bold}
+main{max-width:850px;margin:auto;padding:15px}
+section{background:white;padding:22px;margin:18px 0;border-radius:15px;box-shadow:0 4px 12px #ddd}
+input,select,textarea{width:100%;padding:11px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-size:15px}
+button{background:#6c4ab6;color:white;border:0;padding:12px 18px;border-radius:8px;cursor:pointer;margin-top:8px}
+button:hover{background:#50358c}
+h2{color:#6c4ab6}
+label{display:block;margin:10px 0 0}
+label.chk{margin:0 0 10px}
+label.chk input{width:auto;margin-right:6px}
+pre.out{white-space:pre-wrap;background:#f7f4ff;border-left:4px solid #6c4ab6;padding:12px;border-radius:8px;font-family:inherit;margin-top:15px}
+.stat{font-size:14px;margin:6px 0}
+header .stat{color:#e8defc}
+footer{text-align:center;padding:20px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>💜 Rishta Radar</h1>
+<p>Know yourself before saying yes!</p>
+<!--STATE-->
+</header>
+
+<nav><a href="#quiz">Quiz</a><a href="#non">Priorities</a><a href="#prep">Meeting Prep</a><a href="#add">Add Meeting</a><a href="#view">Rankings</a><a href="#gap">Family Gap</a><a href="#bio">Biodata</a><a href="#no">Polite No</a><a href="#pressure">Pressure</a><a href="#myth">Myths</a><a href="#guide">Guide</a><a href="#burn">Burnout</a><a href="#final">Decision</a></nav>
+
+<main>
+<section id="quiz">
+<h2>🧠 Self Discovery Quiz</h2>
+<form action="/run/quiz" method="post">
+<label>Q1. Where would you like to live after marriage?</label><select name="q0"><option value="1">Joint family, everyone together</option><option value="2">Separate home, weekly visits</option><option value="3">Fully independent</option></select><label>Q2. What is your outlook on career?</label><select name="q1"><option value="1">Climb high, promotion after promotion</option><option value="2">Balance work and home</option><option value="3">Home and family come first</option></select><label>Q3. Your ideal weekend?</label><select name="q2"><option value="1">Big gathering with friends</option><option value="2">Small close circle</option><option value="3">Alone with a book or show</option></select><label>Q4. After an argument, you usually...</label><select name="q3"><option value="1">Talk it out right away</option><option value="2">Take space, then talk</option><option value="3">Avoid it and hope it passes</option></select><label>Q5. Most important thing in a rishta?</label><select name="q4"><option value="1">Family environment</option><option value="2">Matching ambitions</option><option value="3">Friendly, open nature</option></select><label>Q6. How do you spend Eid?</label><select name="q5"><option value="1">With the whole khandan</option><option value="2">With friends</option><option value="3">Travel or quiet time</option></select><label>Q7. Where do you see yourself in 5 years?</label><select name="q6"><option value="1">Settled home and family</option><option value="2">Big career or business</option><option value="3">Lots of travel and experiences</option></select><label>Q8. You get a surprise bonus. You...</label><select name="q7"><option value="1">Spend it on parents or family</option><option value="2">Invest in a course or business</option><option value="3">Treat friends, plan a trip</option></select>
+<button>Submit Quiz</button>
+</form>
+<!--OUT:quiz-->
+</section>
+<section id="non">
+<h2>💎 My Priorities</h2>
+<form action="/run/nonneg" method="post">
+<p>Rate how important each value is to you:</p><label>Family Respect</label><select name="p0"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label class="chk"><input type="checkbox" name="d0"> Deal-breaker</label><label>Honest Communication</label><select name="p1"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label class="chk"><input type="checkbox" name="d1"> Deal-breaker</label><label>Career Freedom</label><select name="p2"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label class="chk"><input type="checkbox" name="d2"> Deal-breaker</label><label>Shared Lifestyle Values</label><select name="p3"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label class="chk"><input type="checkbox" name="d3"> Deal-breaker</label><label>Emotional Maturity</label><select name="p4"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label class="chk"><input type="checkbox" name="d4"> Deal-breaker</label>
+<button>Save Priorities</button>
+</form>
+<!--OUT:nonneg-->
+</section>
+<section id="prep">
+<h2>☕ Meeting Preparation</h2>
+<form action="/run/prep" method="post">
+<!--PREPTYPE-->
+<button>Prepare Me</button>
+</form>
+<!--OUT:prep-->
+</section>
+<section id="add">
+<h2>➕ Add Meeting</h2>
+<form action="/run/add" method="post">
+<p>Rate values only - no looks or salary. Up to 5 meetings.</p><input name="name" placeholder="Person's name or nickname" maxlength="28"><label>Family Respect</label><select name="r0"><option value="1">1 - Poor</option><option value="2">2</option><option value="3">3 - Okay</option><option value="4">4</option><option value="5">5 - Great</option></select><label>Honest Communication</label><select name="r1"><option value="1">1 - Poor</option><option value="2">2</option><option value="3">3 - Okay</option><option value="4">4</option><option value="5">5 - Great</option></select><label>Career Freedom</label><select name="r2"><option value="1">1 - Poor</option><option value="2">2</option><option value="3">3 - Okay</option><option value="4">4</option><option value="5">5 - Great</option></select><label>Shared Lifestyle Values</label><select name="r3"><option value="1">1 - Poor</option><option value="2">2</option><option value="3">3 - Okay</option><option value="4">4</option><option value="5">5 - Great</option></select><label>Emotional Maturity</label><select name="r4"><option value="1">1 - Poor</option><option value="2">2</option><option value="3">3 - Okay</option><option value="4">4</option><option value="5">5 - Great</option></select>
+<button>Add Person</button>
+</form>
+<!--OUT:add-->
+</section>
+<section id="view">
+<h2>📊 Meeting Rankings</h2>
+<form action="/run/view" method="post">
+
+<button>View Rankings</button>
+</form>
+<!--OUT:view-->
+</section>
+<section id="gap">
+<h2>👨‍👩‍👧 Family Expectation Gap</h2>
+<form action="/run/gap" method="post">
+<label>Family Respect - how important to your parents?</label><select name="g0"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label>Honest Communication - how important to your parents?</label><select name="g1"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label>Career Freedom - how important to your parents?</label><select name="g2"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label>Shared Lifestyle Values - how important to your parents?</label><select name="g3"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select><label>Emotional Maturity - how important to your parents?</label><select name="g4"><option value="1">1 - Flexible</option><option value="2">2</option><option value="3">3 - Important</option><option value="4">4</option><option value="5">5 - Essential</option></select>
+<button>Check Gap</button>
+</form>
+<!--OUT:gap-->
+</section>
+<section id="bio">
+<h2>📄 Biodata Maker</h2>
+<form action="/run/bio" method="post">
+<input name="name" placeholder="Name" maxlength="38"><input name="age" type="number" min="18" max="80" placeholder="Age"><input name="job" placeholder="Profession" maxlength="38"><input name="city" placeholder="City" maxlength="38"><input name="i1" placeholder="Interest 1" maxlength="38"><input name="i2" placeholder="Interest 2" maxlength="38"><input name="i3" placeholder="Interest 3" maxlength="38">
+<button>Create Biodata</button>
+</form>
+<!--OUT:bio-->
+</section>
+<section id="no">
+<h2>🙅 Polite No Generator</h2>
+<form action="/run/no" method="post">
+<label>Reason</label><select name="reason"><option value="1">Not ready</option><option value="2">Values differ</option><option value="3">Focus on career</option><option value="4">No connection</option></select><label>Tone</label><select name="tone"><option value="1">Warm</option><option value="2">Formal</option></select>
+<button>Generate Response</button>
+</form>
+<!--OUT:no-->
+</section>
+<section id="pressure">
+<h2>😓 Pressure Handler</h2>
+<form action="/run/pressure" method="post">
+<label>Who is pressuring you?</label><select name="who"><option value="1">Aunty</option><option value="2">Cousin</option><option value="3">Neighbour</option></select><label>Tone</label><select name="tone"><option value="1">Funny</option><option value="2">Firm</option><option value="3">Polite</option></select>
+<button>Get Response</button>
+</form>
+<!--OUT:pressure-->
+</section>
+<section id="myth">
+<h2>❌ Myth Buster</h2>
+<form action="/run/myth" method="post">
+
+<button>Explore Myths</button>
+</form>
+<!--OUT:myth-->
+</section>
+<section id="guide">
+<h2>📚 Marriage Guide</h2>
+<form action="/run/guide" method="post">
+
+<button>View Guide</button>
+</form>
+<!--OUT:guide-->
+</section>
+<section id="burn">
+<h2>🔥 Burnout Meter</h2>
+<form action="/run/burnout" method="post">
+<p>Rate 1 (not at all) to 5 (very much):</p><label>I feel tired of rishta meetings</label><select name="b0"><option value="1">1 - Very low</option><option value="2">2</option><option value="3">3 - Medium</option><option value="4">4</option><option value="5">5 - Very high</option></select><label>I feel pressured by relatives</label><select name="b1"><option value="1">1 - Very low</option><option value="2">2</option><option value="3">3 - Medium</option><option value="4">4</option><option value="5">5 - Very high</option></select><label>I am saying yes just to end the pressure</label><select name="b2"><option value="1">1 - Very low</option><option value="2">2</option><option value="3">3 - Medium</option><option value="4">4</option><option value="5">5 - Very high</option></select><label>I have little time left for myself</label><select name="b3"><option value="1">1 - Very low</option><option value="2">2</option><option value="3">3 - Medium</option><option value="4">4</option><option value="5">5 - Very high</option></select>
+<button>Check Burnout</button>
+</form>
+<!--OUT:burnout-->
+</section>
+<section id="final">
+<h2>⚖️ Final Decision</h2>
+<form action="/run/final" method="post">
+
+<button>Help Me Decide</button>
+</form>
+<!--OUT:final-->
+</section>
+
+<section id="home">
+<h2>🏠 Home</h2>
+<form action="/reset" method="post">
+<button>Reset Website</button>
+</form>
+</section>
+</main>
+
+<footer>💜 Rishta Radar | Made with care</footer>
+</body>
+</html>
